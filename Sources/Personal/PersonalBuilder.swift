@@ -20,17 +20,17 @@ final class PersonalComponent: Component<PersonalDependency> {
 
 // MARK: - Builder
 
-protocol PersonalBuildable: Buildable {
+public protocol PersonalBuildable: Buildable {
     func build(withListener listener: PersonalListener) -> PersonalRouting
 }
 
-final class PersonalBuilder: Builder<PersonalDependency>, PersonalBuildable {
+open class PersonalBuilder: Builder<PersonalDependency>, PersonalBuildable {
 
     override init(dependency: PersonalDependency) {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: PersonalListener) -> PersonalRouting {
+    public func build(withListener listener: PersonalListener) -> PersonalRouting {
         let component = PersonalComponent(dependency: dependency)
         let viewController = PersonalViewController()
         let interactor = PersonalInteractor(presenter: viewController)
