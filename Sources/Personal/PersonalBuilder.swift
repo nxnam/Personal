@@ -26,7 +26,7 @@ public protocol PersonalBuildable: Buildable {
 
 open class PersonalBuilder: Builder<PersonalDependency>, PersonalBuildable {
 
-    override init(dependency: PersonalDependency) {
+    public override init(dependency: PersonalDependency) {
         super.init(dependency: dependency)
     }
 
