@@ -16,7 +16,7 @@ protocol PersonalPresentableListener: AnyObject {
     // interactor class.
 }
 
-final class PersonalViewController: UIViewController, PersonalPresentable, PersonalViewControllable {
+open class PersonalViewController: UIViewController, PersonalPresentable, PersonalViewControllable {
 
     weak var listener: PersonalPresentableListener?
 }
